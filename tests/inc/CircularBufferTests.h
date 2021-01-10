@@ -65,5 +65,17 @@ TEST_F(CircularBufferTests, IncrementIndex)
     inc->incrementIndex(temp);
     EXPECT_EQ(temp, 0);
 }
-
+////////////////////
+TEST(StringBufferTest, String)
+{
+    CircularBuffer<std::string> buf(1);
+    buf.add("abc");
+    EXPECT_EQ(buf.remove(), "abc");
+}
+TEST(IntBufferTest, Size)
+{
+    CircularBuffer<int> buf(1);
+    buf.add(123);
+    EXPECT_EQ(buf.getAllocatedSize(), buf.getSize());
+}
 
